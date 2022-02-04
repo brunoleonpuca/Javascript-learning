@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+h1, h2 {
+    justify-self: center;
+}
+
+#error-el {
+    color: red;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid green;
+    padding: 0.5rem;    
+}
+
+button {
+    padding: 1rem;
+    margin: 1rem;
+}
