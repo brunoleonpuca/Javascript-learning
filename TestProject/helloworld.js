@@ -7,6 +7,7 @@ var counter = 0;
 let countElem = document.getElementById('countElem');
 let savedNumsElem = document.getElementById('saved-nums');
 let errorElem = document.getElementById('error-el');
+let errorTeamElem = document.getElementById('error-team-el');
 
 function increment() {
     console.log('the button was clicked');
@@ -22,14 +23,27 @@ function save() {
         savedNumsElem.innerText += countElem.innerText + ',';
         errorElem.innerText = null;
     }
-
 }
 
 function error(n) {
-    if (n == 0) {
-        errorElem.innerText = "Can't save 0 value"
-    }else{
-        errorElem.innerText = n+" already saved"
+    if(isFinite(n)) 
+    {
+        if(n == 0) 
+        {
+            errorElem.innerText = "Can't save zeros" 
+        }  
+        else if(n == -1) 
+        {
+            errorTeamElem.innerText = "No value"
+        }
+        else
+        {
+            errorElem.innerText = n+" already saved"
+        }
+    }
+    else
+    {
+        // console.log("Llego hasta aca?")
+        errorTeamElem.innerText + n+ "already saved"
     }
 }
-
